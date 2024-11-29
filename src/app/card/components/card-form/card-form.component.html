@@ -1,0 +1,23 @@
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Nom de la carte</label>
+    <input formControlName="name" required />
+  </div>
+
+  <div>
+    <label>Code de la carte</label>
+    <input formControlName="cardNumber" maxlength="16" required />
+  </div>
+
+  <div>
+    <label>CCV</label>
+    <input formControlName="ccv" maxlength="3" required />
+  </div>
+
+  <div>
+    <label>Date d'expiration (MM/AA)</label>
+    <input formControlName="expirationDate" placeholder="MM/AA" required />
+  </div>
+
+  <button type="submit" [disabled]="!cardForm.valid">Ajouter la carte</button>
+</form>
